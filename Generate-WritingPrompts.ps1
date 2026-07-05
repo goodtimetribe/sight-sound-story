@@ -1,11 +1,11 @@
 [CmdletBinding()]
 param(
     [ValidateSet('markdown', 'json', 'csv')]
-    [string]$OutputFormat = 'markdown',
+    [string]$OutputFormat = 'json',
 
     [string]$OutputFile,
 
-    [int]$Count = 20,
+    [int]$Count = 1,
 
     [string]$SightFile = (Join-Path $PSScriptRoot 'prompts/sight.yaml'),
 
@@ -28,7 +28,8 @@ if ([string]::IsNullOrWhiteSpace($OutputFile)) {
         'csv' { 'csv' }
     }
 
-    $OutputFile = Join-Path $PWD ("writing-prompts.$extension")
+    $timestamp = Get-Date -Format 'yyyyMMdd-HHmmss'
+    $OutputFile = Join-Path $PWD ("writing-prompts-$timestamp.$extension")
 }
 
 foreach ($file in @($SightFile, $SoundFile, $StoryFile)) {
