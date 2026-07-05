@@ -7,11 +7,13 @@ param(
 
     [int]$Count = 1,
 
-    [string]$SightFile = (Join-Path $PSScriptRoot 'prompts/sight.yaml'),
+    [string]$PromptsFolder = (Join-Path $PSScriptRoot 'prompts'),
 
-    [string]$SoundFile = (Join-Path $PSScriptRoot 'prompts/sound.yaml'),
+    [string]$SightFile,
 
-    [string]$StoryFile = (Join-Path $PSScriptRoot 'prompts/story.yaml')
+    [string]$SoundFile,
+
+    [string]$StoryFile
 )
 
 Set-StrictMode -Version Latest
@@ -19,6 +21,22 @@ $ErrorActionPreference = 'Stop'
 
 if ($Count -lt 1) {
     throw 'Count must be at least 1.'
+}
+
+if (-not (Test-Path -LiteralPath $PromptsFolder -PathType Container)) {
+    throw "Prompts folder not found: $PromptsFolder"
+}
+
+if ([string]::IsNullOrWhiteSpace($SightFile)) {
+    $SightFile = Join-Path $PromptsFolder 'sight.yaml'
+}
+
+if ([string]::IsNullOrWhiteSpace($SoundFile)) {
+    $SoundFile = Join-Path $PromptsFolder 'sound.yaml'
+}
+
+if ([string]::IsNullOrWhiteSpace($StoryFile)) {
+    $StoryFile = Join-Path $PromptsFolder 'story.yaml'
 }
 
 if ([string]::IsNullOrWhiteSpace($OutputFile)) {

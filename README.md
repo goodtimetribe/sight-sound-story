@@ -8,6 +8,9 @@ PowerShell script for generating hip-hop style writing prompts using the **Sight
 - `./prompts/sight.yaml`
 - `./prompts/sound.yaml`
 - `./prompts/story.yaml`
+- `./prompts/scifi/sight.yaml`
+- `./prompts/scifi/sound.yaml`
+- `./prompts/scifi/story.yaml`
 
 Each YAML file has 20+ entries and can be expanded/customized without changing the script.
 
@@ -18,9 +21,10 @@ pwsh ./Generate-WritingPrompts.ps1
 ```
 
 Defaults:
-- `OutputFormat`: `markdown`
-- `Count`: `20`
-- `OutputFile`: `writing-prompts.md` in the current directory
+- `OutputFormat`: `json`
+- `Count`: `1`
+- `OutputFile`: `writing-prompts-<timestamp>.json` in the current directory
+- `PromptsFolder`: `./prompts`
 
 ### Output formats
 
@@ -37,4 +41,10 @@ pwsh ./Generate-WritingPrompts.ps1 \
   -SightFile ./prompts/sight.yaml \
   -SoundFile ./prompts/sound.yaml \
   -StoryFile ./prompts/story.yaml
+```
+
+### Prompt folder selection
+
+```powershell
+pwsh ./Generate-WritingPrompts.ps1 -PromptsFolder ./prompts/scifi
 ```
