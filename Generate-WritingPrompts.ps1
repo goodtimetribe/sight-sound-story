@@ -139,4 +139,4 @@ switch ($OutputFormat) {
     }
 }
 
-Write-Host "Generated $Count prompts in $OutputFormat format: $OutputFile"
+Get-Content -LiteralPath $OutputFile -Raw | Write-Host
