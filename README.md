@@ -4,10 +4,10 @@ PowerShell script for generating hip-hop style writing prompts using the **Sight
 
 ## Files
 
-- `/home/runner/work/sight-sound-story/sight-sound-story/Generate-WritingPrompts.ps1`
-- `/home/runner/work/sight-sound-story/sight-sound-story/prompts/sight.yaml`
-- `/home/runner/work/sight-sound-story/sight-sound-story/prompts/sound.yaml`
-- `/home/runner/work/sight-sound-story/sight-sound-story/prompts/story.yaml`
+- `./Generate-WritingPrompts.ps1`
+- `./prompts/sight.yaml`
+- `./prompts/sound.yaml`
+- `./prompts/story.yaml`
 
 Each YAML file has 20+ entries and can be expanded/customized without changing the script.
 
