@@ -15,7 +15,7 @@ PowerShell script for generating hip-hop style writing prompts using the **Sight
 - `./prompts/fantasy/sound.yaml`
 - `./prompts/fantasy/story.yaml`
 
-Each YAML file has 20+ entries and can be expanded/customized without changing the script.
+YAML files in this repo currently range from 20 to 100 entries and can be expanded/customized without changing the script.
 
 ## Usage
 
